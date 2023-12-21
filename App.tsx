@@ -1,18 +1,17 @@
-import {StatusBar, StyleSheet, View} from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
 import Box from "./Box";
-import Logo from "./Logo";
 
 export default function App() {
   return (
     <>
       <StatusBar backgroundColor={'black'} translucent={true}/>
-      <View style={styles.container}>
-        <Logo/>
-        <Box width={300} height={300}/>
-        {/*<Box width={300} height={200}>*/}
-        {/*  <Box width={276} height={90} withoutInner/>*/}
-        {/*</Box>*/}
-      </View>
+      <SafeAreaView style={styles.container}>
+        <Box>
+          <Text style={{color: '#fff', fontSize: 20, lineHeight: 25}}>Test text</Text>
+          <View style={{height: 200}}/>
+          <Text style={{color: '#fff', fontSize: 20, lineHeight: 25}}>Test text</Text>
+        </Box>
+      </SafeAreaView>
     </>
   );
 }
@@ -22,8 +21,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#09090C',
     paddingHorizontal: 24,
+    paddingVertical: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 20
+    gap: 20,
   },
 });
